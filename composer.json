@@ -1,8 +1,8 @@
 {
     "name": "acontardi/ecoomerce",
     "authors": [{
-        "name": "TCC E-commerce",
-        "email": "tcc.fatebti@gmail.com"
+        "name": "Curso",
+        "email": "j@gmail.com"
     }],
     "require": {
         "phpmailer/phpmailer": "5.2.22",
@@ -11,7 +11,7 @@
     },
     "autoload": {
         "psr-4": {
-            "": "vendor\\acontardi\\php-classes\\src"
+            "Acontardi\\": "vendor\\Acontardi\\php-classes\\src"
         }
     }
 }

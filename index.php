@@ -3,14 +3,17 @@
 require_once("vendor/autoload.php");
 
 use \Slim\Slim;
-use \acontardi\Page;
 
 $app = new Slim();
 
 $app->config('debug', true);
 
 $app->get('/', function() {
-	echo "Ok!";
+
+	$sql = new Acontardi\DB\Sql();
+	$results = $sql->select("SELECT * FROM tb_users");
+
+	echo json_encode($results);
 	
 });
 
