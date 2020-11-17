@@ -1,100 +1,100 @@
-<?php if(!class_exists('Rain\Tpl')){exit;}?><!-- Área superior do rodapé inicial -->
-    <div class="footer-top-area">
-        <div class="zigzag-bottom"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-about-us">
-                        <h2>Bijuteria Biju</h2>
-                        <p></p>
-                        <div class="footer-social">
-                            <a href="https://www.facebook.com/BijuteriaBiju" target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a href="https://twitter.com/BijuteriaBiju" target="_blank"><i class="fa fa-twitter"></i></a>
-                            <a href="https://www.youtube.com/channel/UCjWENuSH2gX55-y7QSZiWxA" target="_blank"><i class="fa fa-youtube"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-menu">
-                        <h2 class="footer-wid-title">Navegação </h2>
-                        <ul>
-                            <li><a href="#">Minha Conta</a></li>
-                            <li><a href="#">Meus Pedidos</a></li>
-                            <li><a href="#">Lista de Desejos</a></li>
-                        </ul>                        
-                    </div>
-                </div>
-                
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-menu">
-                        <h2 class="footer-wid-title">Categorias</h2>
-                        <ul>
-                            <li><a href="#">Categoria Um</a></li>
-                            <li><a href="#">Categoria Dois</a></li>
-                            <li><a href="#">Categoria Três</a></li>
-                            <li><a href="#">Categoria Quarto</a></li>
-                            <li><a href="#">Categoria Cinco</a></li>
-                        </ul>                        
-                    </div>
-                </div>
-                
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-newsletter">
-                        <h2 class="footer-wid-title">Newsletter</h2>
-                        <p></p>
-                        <div class="newsletter-form">
-                            <form action="#">
-                                <input type="email" placeholder="Type your email">
-                                <input type="submit" value="Subscribe">
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- Área superior do rodapé final -->
-    
-    <!-- Inicio da área inferior do rodapé -->
-    <div class="footer-bottom-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="copyright">
-                        <p>&copy; 2017 Bijuteria Biju. <a href="http://www.BijuteriaBiju.com.br" target="_blank">BijuteriaBiju.com.br</a></p>
-                    </div>
-                </div>
-                
-                <div class="col-md-4">
-                    <div class="footer-card-icon">
-                        <i class="fa fa-cc-discover"></i>
-                        <i class="fa fa-cc-mastercard"></i>
-                        <i class="fa fa-cc-paypal"></i>
-                        <i class="fa fa-cc-visa"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- Fim da área inferior do rodapé -->
-   
-    <!-- Servidor de formulário jQuery mais recente -->
-    <script src="https://code.jquery.com/jquery.min.js"></script>
-    
-    <!-- Bootstrap JS form CDN -->
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    
-    <!-- jQuery sticky menu -->
-    <script src="/res/site/js/owl.carousel.min.js"></script>
-    <script src="/res/site/js/jquery.sticky.js"></script>
-    
-    <!-- jQuery easing -->
-    <script src="/res/site/js/jquery.easing.1.3.min.js"></script>
-    
-    <!-- Main Script -->
-    <script src="/res/site/js/main.js"></script>
-    
-    <!-- Slider -->
-    <script type="text/javascript" src="/res/site/js/bxslider.min.js"></script>
-	<script type="text/javascript" src="/res/site/js/script.slider.js"></script>
-  </body>
+<!-- Principal Footer -->
+<footer class="main-footer">
+    <!-- Para a direita -->
+    <div class="pull-right hidden-xs">
+      O que você quiser
+    </div>
+    <!-- Padrão à esquerda -->
+    <strong>Copyright &copy; 2020 <a href="#">Companhia</a>.</strong> Todos os direitos reservados.
+  </footer>
+
+  <!-- Barra Lateral de Controle -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Crie as guias -->
+    <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+      <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fa fa-home"></i></a></li>
+      <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fa fa-gears"></i></a></li>
+    </ul>
+    <!-- Painéis de guia -->
+    <div class="tab-content">
+      <!-- Conteúdo da guia inicial -->
+      <div class="tab-pane active" id="control-sidebar-home-tab">
+        <h3 class="control-sidebar-heading">Atividade recente</h3>
+        <ul class="control-sidebar-menu">
+          <li>
+            <a href="javascript:;">
+              <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+              <div class="menu-info">
+                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+
+                <p>Será 23 no dia 24 de Dezembro</p>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <!-- /.controle-barra lateral-menu -->
+
+        <h3 class="control-sidebar-heading">Progresso das Tarefas</h3>
+        <ul class="control-sidebar-menu">
+          <li>
+            <a href="javascript:;">
+              <h4 class="control-sidebar-subheading">
+                Design de modelo personalizado
+                <span class="pull-right-container">
+                  <span class="label label-danger pull-right">70%</span>
+                </span>
+              </h4>
+
+              <div class="progress progress-xxs">
+                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+              </div>
+            </a>
+          </li>
+        </ul>
+        <!-- /.controle-barra lateral-menu -->
+
+      </div>
+      <!-- /.guia-painel -->
+      <!-- Conteúdo da guia de estatísticas -->
+      <div class="tab-pane" id="control-sidebar-stats-tab">Conteúdo da guia de estatísticas</div>
+      <!-- /.guia-painel -->
+      <!-- Conteúdo da guia Configurações -->
+      <div class="tab-pane" id="control-sidebar-settings-tab">
+        <form method="post">
+          <h3 class="control-sidebar-heading">Configurações Gerais</h3>
+
+          <div class="form-group">
+            <label class="control-sidebar-subheading">
+              Relatório de uso do painel
+              <input type="checkbox" class="pull-right" checked>
+            </label>
+
+            <p>
+              Algumas informações sobre esta opção de configurações gerais
+            </p>
+          </div>
+          <!-- /.formulário-grupo -->
+        </form>
+      </div>
+      <!-- /.guia-painel -->
+    </div>
+  </aside>
+  <!-- /.barra lateral de controle -->
+  <!-- Este div deve ser colocado imediatamente 
+        após a barra lateral de controle -->
+  <div class="control-sidebar-bg"></div>
+</div>
+<!-- ./embrulho -->
+
+<!-- SCRIPTS JS REQUERIDOS -->
+
+<!-- jQuery 2.2.3 -->
+<script src="/res/admin/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="/res/admin/bootstrap/js/bootstrap.min.js"></script>
+<!-- AdminLTE App -->
+<script src="/res/admin/dist/js/app.min.js"></script>
+
+</body>
 </html>
