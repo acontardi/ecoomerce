@@ -21,16 +21,16 @@ CREATE SCHEMA IF NOT EXISTS `db_ecommerce` DEFAULT CHARACTER SET utf8 ;
 USE `db_ecommerce` ;
 
 -- -----------------------------------------------------
--- Table `tb_persons`
+-- Table `tb_persons` -- Tabela Pessoas
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `tb_persons` ;
 
 CREATE TABLE IF NOT EXISTS `tb_persons` (
-  `idperson` INT(11) NOT NULL AUTO_INCREMENT,
-  `desperson` VARCHAR(64) NOT NULL,
-  `desemail` VARCHAR(128) NULL DEFAULT NULL,
-  `nrphone` BIGINT(20) NULL DEFAULT NULL,
-  `dtregister` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `idperson` INT(11) NOT NULL AUTO_INCREMENT, --IDpessoa
+  `desperson` VARCHAR(64) NOT NULL, -- Despessoa
+  `desemail` VARCHAR(128) NULL DEFAULT NULL, --desemail
+  `nrphone` BIGINT(20) NULL DEFAULT NULL,  -- NTelefone
+  `dtregister` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, -- DtRegistro
   PRIMARY KEY (`idperson`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 2
@@ -38,20 +38,20 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `tb_addresses`
+-- Table `tb_addresses` -- Tabela Endereço
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `tb_addresses` ;
 
 CREATE TABLE IF NOT EXISTS `tb_addresses` (
-  `idaddress` INT(11) NOT NULL AUTO_INCREMENT,
-  `idperson` INT(11) NOT NULL,
-  `desaddress` VARCHAR(128) NOT NULL,
-  `descomplement` VARCHAR(32) NULL DEFAULT NULL,
-  `descity` VARCHAR(32) NOT NULL,
-  `desstate` VARCHAR(32) NOT NULL,
-  `descountry` VARCHAR(32) NOT NULL,
-  `nrzipcode` INT(11) NOT NULL,
-  `dtregister` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `idaddress` INT(11) NOT NULL AUTO_INCREMENT, -- IDEndereço
+  `idperson` INT(11) NOT NULL, -- IDPessoa
+  `desaddress` VARCHAR(128) NOT NULL, --desEndereço
+  `descomplement` VARCHAR(32) NULL DEFAULT NULL, -- descomplemento
+  `descity` VARCHAR(32) NOT NULL, -- Cidade
+  `desstate` VARCHAR(32) NOT NULL, -- Estado
+  `descountry` VARCHAR(32) NOT NULL, -- Pais
+  `nrzipcode` INT(11) NOT NULL,  -- CEP
+  `dtregister` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, -- DtRegistro
   PRIMARY KEY (`idaddress`),
   CONSTRAINT `fk_addresses_persons`
     FOREIGN KEY (`idperson`)
@@ -65,17 +65,17 @@ CREATE INDEX `fk_addresses_persons_idx` ON `tb_addresses` (`idperson` ASC);
 
 
 -- -----------------------------------------------------
--- Table `tb_users`
+-- Table `tb_users` -- Tabela usuarios
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `tb_users` ;
 
 CREATE TABLE IF NOT EXISTS `tb_users` (
-  `iduser` INT(11) NOT NULL AUTO_INCREMENT,
-  `idperson` INT(11) NOT NULL,
-  `deslogin` VARCHAR(64) NOT NULL,
-  `despassword` VARCHAR(256) NOT NULL,
-  `inadmin` TINYINT(4) NOT NULL DEFAULT '0',
-  `dtregister` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `iduser` INT(11) NOT NULL AUTO_INCREMENT, -- idusuario
+  `idperson` INT(11) NOT NULL, -- idpessoas
+  `deslogin` VARCHAR(64) NOT NULL, -- deslogin
+  `despassword` VARCHAR(256) NOT NULL, -- dessenha
+  `inadmin` TINYINT(4) NOT NULL DEFAULT '0', -- campo de qualquer valor
+  `dtregister` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, -- DtRegistro
   PRIMARY KEY (`iduser`),
   CONSTRAINT `fk_users_persons`
     FOREIGN KEY (`idperson`)
@@ -90,17 +90,17 @@ CREATE INDEX `FK_users_persons_idx` ON `tb_users` (`idperson` ASC);
 
 
 -- -----------------------------------------------------
--- Table `tb_carts`
+-- Table `tb_carts` -- Tabela Carrinho
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `tb_carts` ;
 
 CREATE TABLE IF NOT EXISTS `tb_carts` (
   `idcart` INT(11) NOT NULL,
-  `dessessionid` VARCHAR(64) NOT NULL,
-  `iduser` INT(11) NULL DEFAULT NULL,
-  `idaddress` INT(11) NULL DEFAULT NULL,
-  `vlfreight` DECIMAL(10,2) NULL DEFAULT NULL,
-  `dtregister` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `dessessionid` VARCHAR(64) NOT NULL, --  desidentificação-sessão
+  `iduser` INT(11) NULL DEFAULT NULL, -- idusuario
+  `idaddress` INT(11) NULL DEFAULT NULL, -- idendereco
+  `vlfreight` DECIMAL(10,2) NULL DEFAULT NULL, -- valor-frete
+  `dtregister` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, -- DtRegistro
   PRIMARY KEY (`idcart`),
   CONSTRAINT `fk_carts_addresses`
     FOREIGN KEY (`idaddress`)
@@ -121,7 +121,7 @@ CREATE INDEX `fk_carts_addresses_idx` ON `tb_carts` (`idaddress` ASC);
 
 
 -- -----------------------------------------------------
--- Table `tb_products`
+-- Table `tb_products` -- Tabelas Produtos
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `tb_products` ;
 
@@ -141,7 +141,7 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `tb_cartsproducts`
+-- Table `tb_cartsproducts` -- Tabela Carrinho-Produtos
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `tb_cartsproducts` ;
 
@@ -171,7 +171,7 @@ CREATE INDEX `FK_cartsproducts_products_idx` ON `tb_cartsproducts` (`idproduct` 
 
 
 -- -----------------------------------------------------
--- Table `tb_categories`
+-- Table `tb_categories` -- Tabela Categoria
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `tb_categories` ;
 
@@ -185,7 +185,7 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `tb_ordersstatus`
+-- Table `tb_ordersstatus` -- Tabela Status da ordem
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `tb_ordersstatus` ;
 
@@ -200,7 +200,7 @@ DEFAULT CHARACTER SET = utf8;
 
 
 -- -----------------------------------------------------
--- Table `tb_orders`
+-- Table `tb_orders` -- Tabela Ordem
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `tb_orders` ;
 
@@ -238,7 +238,7 @@ CREATE INDEX `fk_orders_ordersstatus_idx` ON `tb_orders` (`idstatus` ASC);
 
 
 -- -----------------------------------------------------
--- Table `tb_productscategories`
+-- Table `tb_productscategories` -- Tabela Categria-Produto
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `tb_productscategories` ;
 
@@ -263,7 +263,7 @@ CREATE INDEX `fk_productscategories_products_idx` ON `tb_productscategories` (`i
 
 
 -- -----------------------------------------------------
--- Table `tb_userslogs`
+-- Table `tb_userslogs` -- Tabela Usuario-Logs
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `tb_userslogs` ;
 
@@ -289,7 +289,7 @@ CREATE INDEX `fk_userslogs_users_idx` ON `tb_userslogs` (`iduser` ASC);
 
 
 -- -----------------------------------------------------
--- Table `tb_userspasswordsrecoveries`
+-- Table `tb_userspasswordsrecoveries` -- Tabela Recuperar-Senha
 -- -----------------------------------------------------
 DROP TABLE IF EXISTS `tb_userspasswordsrecoveries` ;
 
